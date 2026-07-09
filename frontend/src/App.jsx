@@ -4,9 +4,9 @@ function App() {
   const [nachricht, setNachricht] = useState('Loading data...');
 
   useEffect(() => {
-    fetch('/api/test')
+    fetch('/api/health')
       .then((res) => res.json())
-      .then((data) => setNachricht(data.message))
+      .then((data) => setNachricht(data.status))
       .catch((error) => {
         console.error('Error fetching data:', error);
         setNachricht('Error while connecting to backend!');

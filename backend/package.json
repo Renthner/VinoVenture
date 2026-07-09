@@ -1,12 +1,22 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "VinoVenture Backend API",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "health": "node scripts/health-check.js",
+    "health:ci": "node scripts/health-check.js --host localhost --port 3000"
   },
-  "keywords": [],
+  "keywords": [
+    "api",
+    "health",
+    "kubernetes"
+  ],
   "author": "",
   "license": "ISC",
   "type": "module",
@@ -16,6 +26,8 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "@vitest/coverage-v8": "^4.1.10",
+    "nodemon": "^3.1.14",
+    "vitest": "^4.1.10"
   }
 }
